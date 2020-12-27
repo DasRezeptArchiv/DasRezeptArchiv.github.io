@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Rezepte
-permalink: /rezepte/
+layout: rezeptsammlung
+title: Rezeptsammlung
+permalink: /rezeptsammlung/
 ---
 
 Hier findet ihr alle Rezepte.
