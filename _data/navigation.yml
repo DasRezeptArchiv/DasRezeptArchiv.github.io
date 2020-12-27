@@ -1,0 +1,10 @@
+- name: Home
+  link: /
+- name: About
+  link: /about/
+- name: Testsite
+  link: /testsite.html
+- name: Rezepte
+  link: /rezepte/
+- name: Wissen
+  link: /wissen/
