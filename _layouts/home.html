@@ -14,7 +14,7 @@ layout: default
 	{% assign t = tag | first %}
 	{% assign posts = tag | last %}
 	<form method="get">
-		<input type="checkbox" name=check{{tag}} value=1>
+		<input type="checkbox" name=tag value=1>
 		<label for=tag> {{t}} </label><br>
 	</form>
   {% endfor %}
