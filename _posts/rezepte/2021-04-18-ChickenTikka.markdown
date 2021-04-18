@@ -6,8 +6,6 @@ categories: rezept
 tags: indisch party
 ---
 
-{% maincolumn "assets/img/Tikka.jpg" ""%}
-
 {% marginnote 'Ingredients' '***Für 1 Person:*** <br>
 100 g Hähnchenbrust <br>
 60 ml Naturjoghurt <br>
@@ -30,13 +28,17 @@ tags: indisch party
 1/2 Bund Koriander <br>
 Salz' %}
 
-Die Hühnerbrust grob würfeln und in einer Schüssel mit dem Joghurt vermengen und abgedeckt für 4-6 Stunden oder über Nacht im Kühlschrank einlegen.
-Den Ingwer und die Zwiebeln schälen und die Tomaten, Zwiebeln und den Ingwer in feine Würfel schneiden. 
-Die Kerne der Chilischoten entfernen und klein haken und den Knoblauch in Würfel schneiden.
-Die Koriandersamen, Senfkörner, Chilischote und die Knoblauchzehen in einer Pfanne anrösten.
-Die Gewürzmischung, Tomaten, Zwiebeln, Knoblauch, Ingwer und Chili mit etwas Salz in einen Mörser geben und zu einer Paste mörsern.
-Die Hühnerbrust aus dem Joghurt nehmen, trockentupfen und in einem flachen Topf in etwas Pflanzöl anbraten. 
-Die Gewürzpaste und Tomatenmark dazugeben und mit einkochen lassen.
-Mit den passierten Tomaten ablöschen und für ca. 10 Minuten bei mittlerer Hitze zu einer Sauce einkochen.
-Währenddessen den Reis mit 360 ml Wasser und einem Teelöffel Salz aufsetzen und gar kochen.
-Den Koriander grob hacken und kurz vor dem Anrichten zusammen mit dem Limettensaft und -abrieb unter das Tikka Masala
+{% maincolumn "assets/img/Tikka.png" ""%}
+
+
+
+* Die Hühnerbrust grob würfeln, in einer Schüssel mit dem Joghurt vermengen und abgedeckt für 4-6 Stunden oder über Nacht im Kühlschrank einlegen.
+* Den Ingwer und die Zwiebeln schälen und die Tomaten, Zwiebeln und den Ingwer in feine Würfel schneiden. 
+* Die Kerne der Chilischoten entfernen und klein hacken und den Knoblauch in Würfel schneiden.
+* Die Koriandersamen, Senfkörner, Chilischote und die Knoblauchzehen in einer Pfanne anrösten.
+* Die Gewürzmischung, Tomaten, Zwiebeln, Knoblauch, Ingwer und Chili mit etwas Salz in einen Mörser geben und zu einer Paste mörsern.
+* Die Hühnerbrust aus dem Joghurt nehmen, trockentupfen und in einem flachen Topf in etwas Pflanzöl anbraten. 
+* Die Gewürzpaste und Tomatenmark dazugeben und mit einkochen lassen.
+* Mit den passierten Tomaten ablöschen und für ca. 10 Minuten bei mittlerer Hitze zu einer Sauce einkochen.
+* Währenddessen den Reis mit 360 ml Wasser und einem Teelöffel Salz aufsetzen und gar kochen.
+* Den Koriander grob hacken und kurz vor dem Anrichten zusammen mit dem Limettensaft und -abrieb unter das Tikka Masala heben.
