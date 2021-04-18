@@ -3,23 +3,49 @@ layout: full-width
 ---
 
 <div class="rezepte">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+	{%- if page.title -%}
+		<h1 class="page-heading">{{ page.title }}</h1>
+	{%- endif -%}
  
-  {{ content }}
+	{{ content }}
+	
+	{% capture Ident %}
+			""
+	{% endcapture %}
+	
+	<script type="module"> 
+		import myFunction from '../assets/js/myScript.js';
+		let checkBox = document.getElementById("myCheck");
+		checkBox.onclick = myFunction;
+	</script>
 
+	<script type="module"> 
+		import Filter from '../assets/js/FilterScript.js';
+		let checkBox = document.getElementById({{Ident}});
+		checkBox.onclick = Filter;
+	</script>
+	
+	<input type="checkbox" id="myCheck" onclick="myFunction()" >
+	<label for="myCheck"> Check the Box</label><br>
+	
+	<p id="text" style="display:none"> Checked! </p>
+	<br><br><br>
 
-  <script type="module"> 
-	import myFunction from '../assets/js/myScript.js';
-	let checkBox = document.getElementById("myCheck");
-	checkBox.onclick = myFunction;
-  </script>
-  
-  <input type="checkbox" id="myCheck" onclick="myFunction()" >
-  <label for="myCheck"> Check the Box</label><br>
-  
-  <p id="text" style="display:none"> Checked! </p>
-  <br><br><br>
-  
+	{% for tag in site.tags %}
+		<h3>{{ tag[0] }}</h3>
+		{% capture Ident %}
+			{{ tag[0] | prepend: "Ident_"}}
+		{% endcapture %}
+ 		<input type="checkbox" id={{Ident}} onclick="Filter({{Ident}})" >
+		<label for= "{{Ident}}"> {{tag[0]}}</label><br>
+		<p id="text" style="display:none"> Checked! </p>
+		<ul>
+		{% for post in tag[1] %}
+			<li><a href="{{ post.url | prepend: site.baseurl}}">{{ post.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% endfor %}
+	
+	
+	
 </div>
