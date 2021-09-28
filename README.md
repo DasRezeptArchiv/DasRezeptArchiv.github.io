@@ -1,218 +1,205 @@
-# minima
+# tufte-jekyll theme
 
-*Minima is a one-size-fits-all Jekyll theme for writers*. It's Jekyll's default (and first) theme. It's what you get when you run `jekyll new`.
+The *Tufte-Jekyll* blog theme is based on the github repository by Edward Tufte [here](https://github.com/edwardtufte/tufte-css), which was orginally created by Dave Leipmann, but is now labeled under Edward Tufte's moniker. I borrowed freely from the Tufte-CSS repo and have transformed many of the typographic and page-structural features into a set of custom Liquid tags that make creating content using this style much easier than writing straight HTML. Essentially, if you know markdown, and mix in a few custom Liquid tags, you can be creating a website with this document style in short order.
 
-[Theme preview](https://jekyll.github.io/minima/)
+Please be aware that the feature parity between the tufte-css repository and this project is not perfect. It is very close, but this Jekyll theme has additional CSS to scratch some of my own itches. One example is that the sidenote's typography is vertically spaced in my CSS so they are on the same baseline grid as the body text and it doesn't hurt my eyes when I look at them. Another example is the optional use of color to style links. The current tufte.css repo doesn't allow that, but my opinion is that hey, this is the web. It shouldn't have to ape the way a book looks exactly.  I attempt to stay true to the overall sensibility of the tufte.css repo, but I am not going to sacrifice anything that I think reduces the usability or esthetics of this theme in the service of exact feature parity. Just as I have 'forked' the tufte.css, you are more than welcome to modify this theme to suit your own tastes and specific needs.
 
-![minima theme preview](/screenshot.png)
+## Demo
+
+A sample site with self-documenting content is available [here](http://clayh53.github.io/tufte-jekyll/) on github pages.
 
 ## Installation
 
-Add this line to your Jekyll site's Gemfile:
+I'm not going to go into great detail here. I am just going to assume that anyone interested in either Jekyll, Edward Tufte's work or Github has some basic skills. I created this with Ruby 2.2.0 and Jekyll 2.5.3. There is absolutely nothing exotic going on here, so you can probably make any recent version of Jekyll work with this setup.
 
-```ruby
-gem "minima"
-```
-
-And add this line to your Jekyll site:
-
-```yaml
-theme: minima
-```
-
-And then execute:
-
-    $ bundle
-
-
-## Contents At-A-Glance
-
-Minima has been scaffolded by the `jekyll new-theme` command and therefore has all the necessary files and directories to have a new Jekyll site up and running with zero-configuration.
-
-### Layouts
-
-Refers to files within the `_layouts` directory, that define the markup for your theme.
-
-  - `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
-  - `home.html` &mdash; The layout for your landing-page / home-page / index-page. [[More Info.](#home-layout)]
-  - `page.html` &mdash; The layout for your documents that contain FrontMatter, but are not posts.
-  - `post.html` &mdash; The layout for your posts.
-
-### Includes
-
-Refers to snippets of code within the `_includes` directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
-
-  - `disqus_comments.html` &mdash; Code to markup disqus comment box.
-  - `footer.html` &mdash; Defines the site's footer section.
-  - `google-analytics.html` &mdash; Inserts Google Analytics module (active only in production environment).
-  - `head.html` &mdash; Code-block that defines the `<head></head>` in *default* layout.
-  - `header.html` &mdash; Defines the site's main header section. By default, pages with a defined `title` attribute will have links displayed here.
-
-### Sass
-
-Refers to `.scss` files within the `_sass` directory that define the theme's styles.
-
-  - `minima.scss` &mdash; The core file imported by preprocessed `main.scss`, it defines the variable defaults for the theme and also further imports sass partials to supplement itself.
-  - `minima/_base.scss` &mdash; Resets and defines base styles for various HTML elements.
-  - `minima/_layout.scss` &mdash; Defines the visual style for various layouts.
-  - `minima/_syntax-highlighting.scss` &mdash; Defines the styles for syntax-highlighting.
-
-### Assets
-
-Refers to various asset files within the `assets` directory.
-Contains the `main.scss` that imports sass files from within the `_sass` directory. This `main.scss` is what gets processed into the theme's main stylesheet `main.css` called by `_layouts/default.html` via `_includes/head.html`.
-
-This directory can include sub-directories to manage assets of similar type, and will be copied over as is, to the final transformed site directory.
-
-### Plugins
-
-Minima comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
-
-## Usage
-
-### Home Layout
-
-`home.html` is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
-
-#### Main Heading and Content-injection
-
-From Minima v2.2 onwards, the *home* layout will inject all content from your `index.md` / `index.html` **before** the **`Posts`** heading. This will allow you to include non-posts related content to be published on the landing page under a dedicated heading. *We recommended that you title this section with a Heading2 (`##`)*.
-
-Usually the `site.title` itself would suffice as the implicit 'main-title' for a landing-page. But, if your landing-page would like a heading to be explicitly displayed, then simply define a `title` variable in the document's front matter and it will be rendered with an `<h1>` tag.
-
-#### Post Listing
-
-This section is optional from Minima v2.2 onwards.<br/>
-It will be automatically included only when your site contains one or more valid posts or drafts (if the site is configured to `show_drafts`).
-
-The title for this section is `Posts` by default and rendered with an `<h2>` tag. You can customize this heading by defining a `list_title` variable in the document's front matter.
-
---
-
-### Customization
-
-To override the default structure and style of minima, simply create the concerned directory at the root of your site, copy the file you wish to customize to that directory, and then edit the file.
-e.g., to override the [`_includes/head.html `](_includes/head.html) file to specify a custom style path, create an `_includes` directory, copy `_includes/head.html` from minima gem folder to `<yoursite>/_includes` and start editing that file.
-
-The site's default CSS has now moved to a new place within the gem itself, [`assets/main.scss`](assets/main.scss). To **override the default CSS**, the file has to exist at your site source. Do either of the following:
-- Create a new instance of `main.scss` at site source.
-  - Create a new file `main.scss` at `<your-site>/assets/`
-  - Add the frontmatter dashes, and
-  - Add `@import "minima";`, to `<your-site>/assets/main.scss`
-  - Add your custom CSS.
-- Download the file from this repo
-  - Create  a new file `main.scss` at `<your-site>/assets/`
-  - Copy the contents at [assets/main.scss](assets/main.scss) onto the `main.scss` you just created, and edit away!
-- Copy directly from Minima 2.0 gem
-  - Go to your local minima gem installation directory ( run `bundle show minima` to get the path to it ).
-  - Copy the `assets/` folder from there into the root of `<your-site>`
-  - Change whatever values you want, inside `<your-site>/assets/main.scss`
-
---
-
-### Customize navigation links
-
-This allows you to set which pages you want to appear in the navigation area and configure order of the links.
-
-For instance, to only link to the `about` and the `portfolio` page, add the following to you `_config.yml`:
-
-```yaml
-header_pages:
-  - about.md
-  - portfolio.md
-```
-
---
-
-### Change default date format
-
-You can change the default date format by specifying `site.minima.date_format`
-in `_config.yml`.
+So copy, pull, download a zipfile or whatever and fire it up.
 
 ```
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-minima:
-  date_format: "%b %-d, %Y"
+cd ~/thatPlaceYouPutIt/tufte-jekyll
+jekyll build
+jekyll serve -w
 ```
 
---
+And then point your browser at localhost:4000/tufte-jekyll
 
-### Enabling comments (via Disqus)
+You can also use `jekyll serve -w --baseurl ''` to remove `/tufte-jekyll` from the url and serve your site directly from localhost:4000. This only affects your local preview. See [Setting your baseurl correctly](#setting-your-baseurl-correctly) for more details.
 
-Optionally, if you have a Disqus account, you can tell Jekyll to use it to show a comments section below each post.
+## Configuration
 
-To enable it, add the following lines to your Jekyll site:
+### Jekyll site building options
 
-```yaml
-  disqus:
-    shortname: my_disqus_shortname
+I have created a very simple site options file in the ```_data``` directory that contains two settings currently. The file in the github repo looks like this:
+```
+mathjax: true
+lato_font_load: true
+```
+Removing either 'true' value will prevent the jekyll site building process from adding links to either the Mathjax library or the Google Fonts Lato font as a fallback for the Gill Sans. Set these values to blank if you want to really streamline your page loading time.
+
+### SASS
+
+I am using Sass to create the css file used by this theme. If you would like to change things like fonts, text colors, background colors and so forth, edit the ```_scss/_settings.scss``` file. This file gets loaded first when Jekyll constructs the master CSS file from the tufte.scss SASS file, and contains SASS variables that influence the appearance of the site. The one variable that may be of interest to some is the ```$link-style``` variable, which can be set to either ```underline``` or ```color```. This will determine if your links are styled using the ```$contrast-color``` variable with no underlining, or whether they are styled using light underlining as seen on the [*tufte-css*](https://github.com/edwardtufte/tufte-css) repo.
+
+### Social icons
+
+You can edit the ```_data/social.yml``` file and put in your own information for the footer links
+
+### Silly-ass badge in the upper left
+
+In the ```assets/img``` directory is a file called ```badge_1.png```. This file's parent is ```badge_1.psd``` and is an editable photoshop file with layers for the letters comprising the initials. Change them to suit your fancy. Or just substitute another badge in its place. You can edit the ```_includes/header.html``` file and change the file that it points too. Find your favorite Tufte emoji and fly your freak flag proudly.
+
+## Some things about the things
+
+I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the ```_posts``` directory, and then edit them with Github-Flavored Markdown. In addition to all that GFM goodness, you can use the following custom Liquid tags in your content area.
+
+Note that these tags *have been altered* from Version 1 of this theme to accommodate some responsive features, namely the ability to reveal hidden sidenotes, margin notes and margin figures by tapping either a superscript or a symbol on small screens. This requires you to add a parameter to the tag that is a unique *ID* for each tag instance on the page. What the id is called is not important, but it is important that it be unique for each individual element on the page. I would recommend in the interest of sanity to give names that are descriptive, like ```'sn-id-1'``` or ```'mf-id-rhino'```.
+
+### Notes about quotes in Liquid tags
+
+The custom Liquid tags are designed to simplify writing content and displaying it with the *tufte-css* look. Here are a few notes on using quotes inside the tags.
+
+* Liquid tags work with either double or single quotes to surround the tag parameters, as you'll see in all the examples below.
+
+* You can use single quotes and apostrophes in the text inside tag parameters, as long as all the parameters are surrounded by double quotes. Liquid will automatically process them correctly. For example: `{% newthought "I'm so smart!" %}` will render as `I'm so smart!`. If the text inside one of the parameters contains a single quote, then use double quotes to surround the parameters. Conversely, if the text inside one of the parameters contains a double quote, use single quotes to surround the parameters.
+
+* One can also use a double quote in the text inside a tag parameter by 'escaping' the double quote by placing a backslash directly in front of it, for example: `{% newthought "\"I'm so smart!\", she thought." %}` will render as `"I'm so smart!", she thought.`
+
+* You can use HTML inside of a tag parameter. Originally, Markdown support inside the Liquid parameters strings was spotty, but I recently added some code that should allow most Markdown inside the tag parameter strings. You can use either single quotes, or escaped double quotes in the HTML. For example, both of the following tags will work:
+
+```
+{% newthought "Example website: <a href='http://example.com'>example label</a>" %}
+```
+```
+{% newthought "Example website: <a href=\"http://example.com\">example label</a>" %}
 ```
 
-You can find out more about Disqus' shortnames [here](https://help.disqus.com/customer/portal/articles/466208).
+The [demo site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating HTML inside of a tag parameter.
 
-Comments are enabled by default and will only appear in production, i.e., `JEKYLL_ENV=production`
+### Epigraph
 
-If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that post's YAML Front Matter.
+This tag will render its three components into a standalone epigraph. This can be used as an introduction to a page or to a section within a page. As with most things Markdown, surround the epigraph with a blank line above and below it.
 
---
-
-### Social networks
-
-You can add links to the accounts you have on other sites, with respective icon, by adding one or more of the following options in your config:
-
-```yaml
-twitter_username: jekyllrb
-github_username:  jekyll
-dribbble_username: jekyll
-facebook_username: jekyll
-flickr_username: jekyll
-instagram_username: jekyll
-linkedin_username: jekyll
-pinterest_username: jekyll
-youtube_username: jekyll
-googleplus_username: +jekyll
-rss: rss
-
-mastodon:
- - username: jekyll
-   instance: example.com
- - username: jekyll2
-   instance: example.com
+```
+{% epigraph ' "How did you go bankrupt?" Two ways. Gradually, then suddenly.' 'Ernest Hemingway' ' "The Sun Also Rises" ' %}
 ```
 
---
+### New thought
 
-### Enabling Google Analytics
+This tag will render its contents in small caps. Useful at the beginning of new sections:
 
-To enable Google Analytics, add the following lines to your Jekyll site:
-
-```yaml
-  google_analytics: UA-NNNNNNNN-N
+```
+{% newthought "This will be rendered in small caps" %} blah blah
 ```
 
-Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
+### Sidenote
 
---
+This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is automatically numbered, starting over on each page. Just put it in the content like you would insert a footnote like so:
 
-### Enabling Excerpts on the Home Page
+```
+blah lorem blah{% sidenote "sidenote-id" "This is a random sidenote" %} blah blah
+```
+And it will add the html spans and superscripts. On smaller screens, tapping on the number will reveal the sidenote!
 
-To display post-excerpts on the Home Page, simply add the following to your `_config.yml`:
+The `full-width` page layout will not display side notes. (It's a full-width page and has no margin)
 
-```yaml
-show_excerpts: true
+### Margin note
+
+This tag is essentially the same as a sidenote, but heh, no number. Like this:
+
+```
+lorem nobeer toasty critters{% marginnote "margin-note-id" "Random thought when drinking" %} continue train of thought
+```
+On smaller screens, tapping on the <span>&#8853;</span> symbol will open up the margin note.
+
+The `full-width` page layout will not display margin notes. (It's a full-width page and has no margin)
+
+### Full width image
+
+This tag inserts an image that spans both the main content column and the side column:
+
+```
+blah blah
+{% fullwidth "assets/img/rhino.png" "A caption for the image" %}
+blah
 ```
 
-## Contributing
+or
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jekyll/minima. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+```
+blah blah
+{% fullwidth "http://example.com/image.jpg" "A caption for the image" %}
+blah
+```
 
-## Development
+Note the absence of a leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
 
-To set up your environment to develop this theme, run `script/bootstrap`.
+Also note that fullwidth images need to be included *on their own line* in order for the captions to work correctly.
 
-To test your theme, run `script/server` (or `bundle exec jekyll serve`) and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme and the contents. As you make modifications, your site will regenerate and you should see the changes in the browser after a refresh.
+### Main column image
 
-## License
+This tag inserts an image that is confined to the main content column:
 
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+```
+blah blah
+{% maincolumn "assets/img/rhino.png" "This is the caption" %}
+blah
+```
+
+or
+
+```
+blah blah
+{% maincolumn "http://example.com/image.jpg" "This is the caption" %}
+blah
+```
+
+No need for an ID in this tag because it doesn't have any doohickies that open and close on narrow screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
+
+And just like fullwidth images, main column images need to be included on their own line in order for the captions to work correctly.
+
+### Margin figure
+
+This tag inserts and image in the side column area. Note that an id needs to be specified:
+
+```
+blah blah {% marginfigure "margin-figure-id" "assets/img/rhino.png" "This is the caption" %} blah
+```
+
+or
+
+```
+blah blah {% marginfigure "margin-figure-id" "http://example.com/image.jpg" "This is the caption" %} blah
+```
+
+This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
+
+The `full-width` page layout will not display margin figures. (It's a full-width page and has no margin)
+
+### Mathjax
+
+For those wanting to use this Jekyll theme for academic writing, the new Kramdown Markdown engine will accurately parse *MathJax* expressions as long as they are enclosed in a pair of double dollar signs like this:
+
+```$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$```
+
+As a side note - if you do not need the math ability, navigate to the ```_data/options.yml``` file and change the mathjax to 'false' and it will not load the mathjax javascript.
+
+### Setting your baseurl correctly
+
+In the `_config.yml` file is a setting called `baseurl`. This is used by the Jekyll engine to construct all the proper links in the static site. Right now it is set to `/tufte-jekyll` since this project is using Github Pages and you are required to set the project name as the baseurl to serve from Github Pages.
+
+Set this to your own project name if you're going to serve your site from Github Pages. Be sure to include the leading slash, and no trailing slash. For example: `/my-project-name`
+
+For a full explanation of setting your baseurl to work with Github Pages, see the [Project Page URL Structure](http://jekyllrb.com/docs/github-pages/#project-page-url-structure) section of the Jekyll documentation.
+
+To serve from anywhere else besides Github Pages, use a blank baseurl in your `_config.yml` file:
+
+```
+baseurl:
+```
+
+This is `baseurl:` with nothing after it. Not even a space.
+
+### Rakefile
+
+I have added a boilerplate Rakefile directly from the [jekyll-rake-boilerplate repo](https://github.com/gummesson/jekyll-rake-boilerplate). This saves you a small amount of time by prepending the date on a post name and populated the bare minimum of YAML front matter in the file. Please visit the link to the repo to find out how it runs. One thing to note is that there should be *no* space between the task and the opening bracket of your file name. ```rake post["Title"]``` will work while ```rake post ["Title"]``` will not.
+
+There is another rakefile (UploadtoGithub.Rakefile) included that only has one task in it - an automated upload to a *Github Pages* location of the site. This is necessary because of the plugins used by this theme. It does scary stuff like move your ```_site``` somewhere safe, delete everything, move the ```_site``` back and then do a commit to the ```gh-pages``` branch of your repository. You can read about it [here](http://blog.nitrous.io/2013/08/30/using-jekyll-plugins-on-github-pages.html). You would only need to use this if you are using Github project pages to host your site. Integration with the existing Rakefile is left as an exercise for the reader.
