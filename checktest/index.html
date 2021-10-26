@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Home</title>
+  <title>Checktest</title>
   <meta name="description" content="Eine Seite für alle die nach Inspiration suchen.">
 
   <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
@@ -45,7 +45,7 @@
   <link rel="stylesheet" type="text/css" href="/home/css/tufte.css">
   <!-- <link rel="stylesheet" type="text/css" href="/home/css/print.css" media="print"> -->
 
-  <link rel="canonical" href="http://localhost:4000/home/">
+  <link rel="canonical" href="http://localhost:4000/home/checktest/">
 
   <link rel="alternate" type="application/rss+xml" title="Das Rezept-Archiv" href="http://localhost:4000/home/feed.xml" />
 </head>
@@ -66,7 +66,7 @@
 			
 				
 					
-					<a class="active" href="/home/" class="active">Home</a>
+					<a href="/home/">Home</a>
 					
 				
 			
@@ -192,7 +192,7 @@
 			
 				
 					
-					<a href="/home/checktest/">Checktest</a>
+					<a class="active" href="/home/checktest/" class="active">Checktest</a>
 					
 				
 			
@@ -215,36 +215,135 @@
 	</nav>
 </header>
     <article>
-        <h1 class="content-listing-header">Was gibt's neues?</h1>
-  <ul class="content-listing ">
-          
-        <li class="listing">
-          <hr class="slender">
-          <a href="/home/articles/21/ChickenTikka"><h3 class="contrast">Chicken Tikka Masala</h3></a>
-          <br><span class="smaller">April 18, 2021</span>  <br/>
-        </li>
-          
-        <li class="listing">
-          <hr class="slender">
-          <a href="/home/articles/21/DalAddas"><h3 class="contrast">Dal Addas</h3></a>
-          <br><span class="smaller">March 8, 2021</span>  <br/>
-        </li>
-          
-        <li class="listing">
-          <hr class="slender">
-          <a href="/home/articles/20/Edge-Cases"><h3 class="contrast">Edge Cases</h3></a>
-          <br><span class="smaller">April 13, 2020</span>  <br/>
-        </li>
-          
-        <li class="listing">
-          <hr class="slender">
-          <a href="/home/articles/20/tufte-style-jekyll-blog"><h3 class="contrast">Tufte-style Jekyll blog</h3></a>
-          <br><span class="smaller">April 13, 2020</span>  <br/>
-        </li>
-    
-  </ul>
+      <div class="rezepte"><h1 class="page-heading">Checktest</h1><p>Hier wird getestet dass knallt</p>
+
+
+	
+	
+	
+	<script type="module"> 
+		import myFunction from '../assets/js/myScript.js';
+		let checkBox = document.getElementById("myCheck");
+		checkBox.onclick = myFunction;
+	</script>
+
+	<script type="module"> 
+		import Filter from '../assets/js/FilterScript.js';
+		let checkBox = document.getElementById(
+			""
+	);
+		checkBox.onclick = Filter;
+	</script>
+	
+	<input type="checkbox" id="myCheck" onclick="myFunction()" >
+	<label for="myCheck"> Check the Box</label><br>
+	
+	<p id="text" style="display:none"> Checked! </p>
+	<br><br><br>
+
+	
+		<h3>vegan</h3>
+		
+ 		<input type="checkbox" id=
+			Ident_vegan
+		 onclick="Filter(
+			Ident_vegan
+		)" >
+		<label for= "
+			Ident_vegan
+		"> vegan</label><br>
+		<p id="text" style="display:none"> Checked! </p>
+		<ul>
+		
+			<li><a href="/home/articles/21/DalAddas">Dal Addas</a></li>
+		
+			<li><a href="/home/articles/20/tufte-style-jekyll-blog">Tufte-style Jekyll blog</a></li>
+		
+		</ul>
+	
+		<h3>party</h3>
+		
+ 		<input type="checkbox" id=
+			Ident_party
+		 onclick="Filter(
+			Ident_party
+		)" >
+		<label for= "
+			Ident_party
+		"> party</label><br>
+		<p id="text" style="display:none"> Checked! </p>
+		<ul>
+		
+			<li><a href="/home/articles/21/ChickenTikka">Chicken Tikka Masala</a></li>
+		
+			<li><a href="/home/articles/21/DalAddas">Dal Addas</a></li>
+		
+			<li><a href="/home/articles/20/Edge-Cases">Edge Cases</a></li>
+		
+			<li><a href="/home/articles/20/tufte-style-jekyll-blog">Tufte-style Jekyll blog</a></li>
+		
+		</ul>
+	
+		<h3>eins</h3>
+		
+ 		<input type="checkbox" id=
+			Ident_eins
+		 onclick="Filter(
+			Ident_eins
+		)" >
+		<label for= "
+			Ident_eins
+		"> eins</label><br>
+		<p id="text" style="display:none"> Checked! </p>
+		<ul>
+		
+			<li><a href="/home/articles/21/DalAddas">Dal Addas</a></li>
+		
+			<li><a href="/home/articles/20/Edge-Cases">Edge Cases</a></li>
+		
+		</ul>
+	
+		<h3>rezept</h3>
+		
+ 		<input type="checkbox" id=
+			Ident_rezept
+		 onclick="Filter(
+			Ident_rezept
+		)" >
+		<label for= "
+			Ident_rezept
+		"> rezept</label><br>
+		<p id="text" style="display:none"> Checked! </p>
+		<ul>
+		
+			<li><a href="/home/articles/21/DalAddas">Dal Addas</a></li>
+		
+		</ul>
+	
+		<h3>indisch</h3>
+		
+ 		<input type="checkbox" id=
+			Ident_indisch
+		 onclick="Filter(
+			Ident_indisch
+		)" >
+		<label for= "
+			Ident_indisch
+		"> indisch</label><br>
+		<p id="text" style="display:none"> Checked! </p>
+		<ul>
+		
+			<li><a href="/home/articles/21/ChickenTikka">Chicken Tikka Masala</a></li>
+		
+		</ul>
+	
+	
+	
+	
+</div>
+
     </article>
-    <span class="print-footer">Home - Bijan Mielke</span>
+    <span class="print-footer">Checktest - Bijan Mielke</span>
     <footer>
   <hr class="slender">
   <ul class="footer-links">
