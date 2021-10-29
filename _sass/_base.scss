@@ -90,21 +90,6 @@ article {
     margin-bottom: 2rem;
     text-align: center;
 
-    &:before {
-        background: #faf9f5;
-        border: 1px solid #d9d6d0;
-        border-radius: 50%;
-        box-shadow: 0 0 0 4px #faf9f5;
-        color: #a09a92;
-        content: "p";
-        display: inline-block;
-        font-family: libretto-icons;
-        font-size: 21px;
-        line-height: 21px;
-        margin: 1rem auto 2rem;
-        padding: 10px;
-        text-shadow: none;
-    }
 
     > div {
         color: $grey-color;
