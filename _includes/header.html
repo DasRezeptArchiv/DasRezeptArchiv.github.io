@@ -1,9 +1,25 @@
 <header class="site-header">
 
 	<div class="wrapper">
-
+		<a href="{{site.baseurl}}/"><img class="badge" src="{{site.baseurl}}/assets/img/RA_1.png" alt="CH" width="75" height="75" align ="left"></a>
 		<a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
 	</div>
 
+	<nav class="group">
+	
+	{% for i in (1..6) %}
+		{% for node in site.pages %}
+			{% if node.position == i %}
+				{% unless node.nav_exclude %}
+					{% if page.url == node.url %}
+					<a class="active" href="{{node.url | prepend: site.baseurl}}" class="active">{{node.title}}</a>
+					{% else %}
+					<a href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a>
+					{% endif %}
+				{% endunless %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}	
+	</nav>
 </header>
