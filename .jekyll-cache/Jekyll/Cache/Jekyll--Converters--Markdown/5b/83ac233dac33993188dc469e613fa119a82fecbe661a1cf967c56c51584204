@@ -1,11 +1,4 @@
----
-layout: post
-title:  "Dal Addas"
-date:   2021-03-08 23:50:00 +0100
-categories: rezept
-tags: party eins rezept vegan
----
-
+I"�<abstract>
 
 ... ist ein Gericht, der Süd-Persischen Küche. 
 Es besteht vorallem aus roten Linsen und ist einem indischen Dal recht ähnlich, jedoch ist mein Ansatz sehr schlicht gehalten.
@@ -14,13 +7,15 @@ Da es doch recht schnell Zubereitet werden kann ist das mein Geheimtipp für all
 
 
 <figure>
-	<img src="{{ site.baseurl }}/assets/img/Gewuerze.jpg" alt="image">
+	<img src="/home/assets/img/Gewuerze.jpg" alt="image" />
 </figure>
 
+</abstract>
 
-***Für 4 Personen:*** <br> 
-100g Basmati <br> 
-400g Linsen <br> 
-2 Dosen Tomaten  
+<p><strong><em>Für 4 Personen:</em></strong> <br /> 
+100g Basmati <br /> 
+400g Linsen <br /> 
+2 Dosen Tomaten</p>
 
-what ever stands here is supposed to be content and not in the abstract.
+<p>what ever stands here is supposed to be content and not in the abstract.</p>
+:ET

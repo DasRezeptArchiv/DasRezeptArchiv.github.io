@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: rezepte
 title: Rezepte
 permalink: /rezepte/
 position: 2
