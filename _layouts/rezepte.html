@@ -6,8 +6,6 @@ layout: default
  
   {{ content }}
 
-<!--    <h2 class="post-list-heading">{{ page.list_title | default: "Rezepte:" }}</h2> -->
-
   	<ul class="post-list">
 		{% for post in site.posts %}
 			{%- if post.categories contains "rezept" -%}
@@ -23,15 +21,12 @@ layout: default
 							</h2>
 						</header>
 		
-						<div class="entry-abstract">
-							{{ abstract.content }}
+						<div class="entry-content">
+							{{ post.description }}
 						</div>
 					</article>
 				</li>
 			{%- endif -%}
 		{% endfor %}
 	</ul>
-  
-  
-  
 </div>

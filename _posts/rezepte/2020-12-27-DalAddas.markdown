@@ -6,6 +6,7 @@ categories: rezept
 tags: party eins rezept vegan
 ---
 
+<div id="post-description">
 
 ... ist ein Gericht, der Süd-Persischen Küche. 
 Es besteht vorallem aus roten Linsen und ist einem indischen Dal recht ähnlich, jedoch ist mein Ansatz sehr schlicht gehalten.
@@ -17,6 +18,7 @@ Da es doch recht schnell Zubereitet werden kann ist das mein Geheimtipp für all
 	<img src="{{ site.baseurl }}/assets/img/Gewuerze.jpg" alt="image">
 </figure>
 
+</div>
 
 ***Für 4 Personen:*** <br> 
 100g Basmati <br> 
